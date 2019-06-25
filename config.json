@@ -1,0 +1,14 @@
+{
+    "prefix": "!",
+    "botToken": "BOT-TOKEN-HERE",
+
+    "trello": {
+        "key": "TRELLO-KEY-HERE",
+        "token": "TRELLO-TOKEN-HERE",
+        "desktop_bugs": "5771673855f47b547f2decc3",
+        "ios_bugs": "57f2d333b99965a6ba8cd7e0",
+        "store_bugs": "5bc7b4adf7d2b839fa6ac108",
+        "android_bugs": "57f2a306ca14741151990900",
+        "linux_bugs": "5846f7fdfa2f44d1f47267b0"
+    }
+}

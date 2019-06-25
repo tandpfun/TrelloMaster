@@ -1,0 +1,24 @@
+{
+  "name": "trello-master",
+  "version": "1.0.0",
+  "description": "An Discord Bot that will enchance the quality for Bug Hunter's to find the correct Trello Card, thru simple commands.",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/y3ll0wlife/TrelloMaster.git"
+  },
+  "author": "y3ll0w",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/y3ll0wlife/TrelloMaster/issues"
+  },
+  "homepage": "https://github.com/y3ll0wlife/TrelloMaster#readme"
+}
