@@ -5,6 +5,10 @@
 <h3 align="center">An Discord Bot that will enchance the  quality for Bug Hunter&#39;s to find the correct Trello Card, thru simple commands.</h6>
 <h4 align="center">Made for the 0st Discord Community Hack Week</h6>
 
+## Work in progress
+* Userinfo with how many searches and similare.
+* JSON stored data
+
 ## Prerequisites
 
 - node &gt;=9.3.0
