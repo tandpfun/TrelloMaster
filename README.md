@@ -26,6 +26,9 @@ type !help (or what prefix you are using) in an channel where the bot is online 
 
 ## Author
 
+## Code inspired by Rage0001
+* His project [https://github.com/Rage0001/bug-searching-tool](https://github.com/Rage0001/bug-searching-tool)
+
 👤 **y3ll0w**
 
 * Twitter: [@realY3ll0w](https://twitter.com/realY3ll0w)
