@@ -7,20 +7,12 @@ that would keep  me motaviated to create more stuff.
 */
 const Discord = require("discord.js");
 const config = require("../config.json");
-let searches = require("../data/totalSearch.json")
 
 module.exports.run = async (bot, message, args) => {
     if (!message.content.startsWith(config.prefix)) return
-    if (!searches[message.author.id]) {
-        searches[message.author.id] = {
-            searches: 0
-        };
-    }
-    let userSearch = searches[message.author.id].searches;
-    
-    return message.channel.send("I have searched ``" + searchesSinceRestart + "`` times since restart and you have made `" + userSearch + "` searches in total.")
+    return message.channel.send('Pong :ping_pong:  `' + `${message.createdTimestamp - Date.now()}` + ' ms`');
 }
 
 module.exports.help = {
-    name: "stats"
+    name: "ping"
 }

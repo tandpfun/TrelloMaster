@@ -6,20 +6,22 @@ that would keep  me motaviated to create more stuff.
 
 */
 const Discord = require("discord.js");
+const config = require("../config.json");
 
 module.exports.run = async (bot, message, args) => {
-   let helpRich = new Discord.RichEmbed()
-   .setColor("BLURPLE")
-   .setDescription("**>Help Menu**")
-   .addField("search + board + keyword", "It will search Trello and send back links to the relevent cards")
-   .addField("stats", "Sends back some really intresting data about the searching and bot.")
-   .addField("userinfo", "@somone or leave it to get your own userinfo (total amount of searches)")
-   .setFooter(`Command sent by ${message.author.tag}`, message.author.avatarURL);
-   
-   return message.channel.send(helpRich)
+    if (!message.content.startsWith(config.prefix)) return
+    let helpRich = new Discord.RichEmbed()
+        .setColor("BLURPLE")
+        .setDescription("**>Help Menu**")
+        .addField("search + board + keyword", "It will search Trello and send back links to the relevent cards")
+        .addField("stats", "Sends back some really intresting data about the searching and bot.")
+        .addField("userinfo", "@somone or leave it to get your own userinfo (total amount of searches)")
+        .setFooter(`Command sent by ${message.author.tag}`, message.author.avatarURL);
+
+    return message.channel.send(helpRich)
 
 }
 
 module.exports.help = {
-    name:"help"
+    name: "help"
 }

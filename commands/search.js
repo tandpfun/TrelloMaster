@@ -14,6 +14,8 @@ let searches = require("../data/totalSearch.json")
 
 module.exports.run = async (bot, message, args) => {
 
+    if (!message.content.startsWith(config.prefix)) return
+
     var trelloKey = config.trello.key;
     var trelloToken = config.trello.token;
 
@@ -100,7 +102,8 @@ module.exports.run = async (bot, message, args) => {
             fs.writeFile("./data/totalSearch.json", JSON.stringify(searches), (err) => {
                 if (err) console.log(err)
             });
-            
+            return
+
         } else {
             if (cards.length === 0) {
                 return message.channel.send("Beep boop 😞 found nothing Robot sad. But I am  only an robot so please don't yell at me")
