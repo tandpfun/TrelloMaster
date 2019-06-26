@@ -41,7 +41,7 @@ trello
 
 ```
 
-## Code inspired by Rage0001
+## Project inspired by Rage0001
 * His project [https://github.com/Rage0001/bug-searching-tool](https://github.com/Rage0001/bug-searching-tool)
 
 ## Author
