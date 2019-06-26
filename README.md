@@ -6,7 +6,7 @@
 <h4 align="center">Made for the 0st Discord Community Hack Week</h6>
 
 ## Work in progress
-~~- * Userinfo with how many searches and similare.~~
+~~- * Userinfo with how many searches and similare.~~  
 ~~- * JSON stored data.~~
 
 ## Prerequisites
