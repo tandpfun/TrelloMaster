@@ -28,6 +28,19 @@ Beep boop bot is active and ready to rock
 type !help (or what prefix you are using) in an channel where the bot is online to see all the commands
 ```
 
+## config.json explanation
+```sh
+prefix = the prefix before the commands (default "!")
+botToken = your bot token you can get it over at https://discordapp.com/developers/applications/
+richOrText = the way the bot should answer in an rich embed or in pure text form (default "rich")
+
+trello
+  key: your trello key you can get one over at https://trello.com/app-key
+  token: your trello token you can get one over at https://trello.com/app-key
+  desktop, ios, store, android, linux bugs: that is just the id of the board nothing to worry about
+
+```
+
 ## Code inspired by Rage0001
 * His project [https://github.com/Rage0001/bug-searching-tool](https://github.com/Rage0001/bug-searching-tool)
 
