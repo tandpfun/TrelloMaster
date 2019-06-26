@@ -13,6 +13,7 @@ module.exports.run = async (bot, message, args) => {
    .setDescription("**>Help Menu**")
    .addField("search + board + keyword", "It will search Trello and send back links to the relevent cards")
    .addField("stats", "Sends back some really intresting data about the searching and bot.")
+   .addField("userinfo", "@somone or leave it to get your own userinfo (total amount of searches)")
    .setFooter(`Command sent by ${message.author.tag}`, message.author.avatarURL);
    
    return message.channel.send(helpRich)
