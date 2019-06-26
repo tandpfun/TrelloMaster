@@ -9,6 +9,8 @@ that would keep  me motaviated to create more stuff.
 const Discord = require("discord.js");
 const config = require("../config.json");
 const request = require("request");
+const fs = require("fs")
+let searches = require("../data/totalSearch.json")
 
 module.exports.run = async (bot, message, args) => {
 
@@ -85,6 +87,19 @@ module.exports.run = async (bot, message, args) => {
             await embed.setFooter(`Command sent by ${message.author.tag}`, message.author.avatarURL)
             await message.channel.send(embed)
             searchesSinceRestart++;
+
+            if (!searches[message.author.id]) {
+                searches[message.author.id] = {
+                    searches: 1
+                };
+            }
+
+            searches[message.author.id] = {
+                searches: searches[message.author.id].searches + 1
+            };
+            fs.writeFile("./data/totalSearch.json", JSON.stringify(searches), (err) => {
+                if (err) console.log(err)
+            });
             
         } else {
             if (cards.length === 0) {
