@@ -46,10 +46,9 @@ module.exports.run = async (bot, message, args) => {
 
     } else return message.channel.send("**Invalid board**\nTry one of the following instead ``desktop``, ``linux``, ``ios``, ``android``, ``store``")
     if (keyword === "") return message.channel.send("**You need an ** ``keyword`` **for me to search**")
-
     var embed = new Discord.RichEmbed()
 
-    var options = {
+    var getPost = {
         method: 'GET',
         url: 'https://api.trello.com/1/search',
         qs: {
@@ -74,20 +73,26 @@ module.exports.run = async (bot, message, args) => {
         }
     };
 
-    request(options, async function (error, response, body) {
+    request(getPost, async function (error, response, body) {
         let data = JSON.parse(body)
         let cards = data.cards
         if (cards.length >= 1) {
-            var cardsDone = []
+            var addCards = []
             cards.forEach(card => {
-                cardsDone.push(`**${card.name}**\nLink: ${card.shortUrl}`)
+                addCards.push(`**${card.name}**\nLink: ${card.shortUrl}`)
             })
-            var cardsJoin = cardsDone.join("\n\n")
-            await embed.setTitle(`Beep boop I found ${cards.length} bugs`)
-            await embed.setDescription(cardsJoin)
-            await embed.setColor("BLURPLE")
-            await embed.setFooter(`Command sent by ${message.author.tag}`, message.author.avatarURL)
-            await message.channel.send(embed)
+            var foundCards = addCards.join("\n\n")
+            if (config.richOrText.toLowerCase() === "text") {
+                message.channel.send(`Beep boop I found ${cards.length} bugs`)
+                message.channel.send(foundCards)
+            }
+            else{
+                await embed.setTitle(`Beep boop I found ${cards.length} bugs`)
+                await embed.setDescription(foundCards)
+                await embed.setColor("BLURPLE")
+                await embed.setFooter(`Command sent by ${message.author.tag}`, message.author.avatarURL)
+                await message.channel.send(embed)
+            }
             searchesSinceRestart++;
 
             if (!searches[message.author.id]) {

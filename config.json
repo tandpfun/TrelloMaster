@@ -1,7 +1,8 @@
 {
     "prefix": "!",
     "botToken": "BOT-TOKEN-HERE",
-
+    "richOrText": "rich",
+    
     "trello": {
         "key": "TRELLO-KEY-HERE",
         "token": "TRELLO-TOKEN-HERE",
