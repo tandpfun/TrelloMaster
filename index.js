@@ -7,21 +7,21 @@ that would keep  me motaviated to create more stuff.
 */
 const config = require("./config.json");
 const Discord = require("discord.js");
-const fs = require ("fs");
+const fs = require("fs");
 const bot = new Discord.Client({
     disableEveryone: true
 });
 
 // Check if the something is missing
-if (config.botToken === "BOT-TOKEN-HERE" || config.botToken === "" || config.botToken === " "){
+if (config.botToken === "BOT-TOKEN-HERE" || config.botToken === "" || config.botToken === " ") {
     console.log("You are missing your bot token. Get it over at https://discordapp.com/developers/applications/")
     return
 }
-if (config.trello.key === "TRELLO-KEY-HERE" || config.trello.key === "" || config.trello.key === " "){
+if (config.trello.key === "TRELLO-KEY-HERE" || config.trello.key === "" || config.trello.key === " ") {
     console.log("You are missing your trello key. Get it over at https://trello.com/app-key")
     return
 }
-if (config.trello.token === "TRELLO-TOKEN-HERE" || config.trello.token === "" || config.trello.token === " "){
+if (config.trello.token === "TRELLO-TOKEN-HERE" || config.trello.token === "" || config.trello.token === " ") {
     console.log("You are missing your trello token. Get it over at https://trello.com/app-key")
     return
 }
@@ -31,8 +31,8 @@ bot.commands = new Discord.Collection();
 
 module.exports = searchesSinceRestart = 0;
 
-var currentStatus = 0 // Stating activity
-var sleepAmt = 10000 // Time between each activity
+var status = 3;
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -42,7 +42,7 @@ fs.readdir("./commands", (err, files) => {
     if (err) console.log(err);
 
     let jsfile = files.filter(f => f.split(".").pop() === "js")
-    if (jsfile.length <= 0){
+    if (jsfile.length <= 0) {
         console.log("Command invalid")
         return;
     }
@@ -55,46 +55,49 @@ fs.readdir("./commands", (err, files) => {
 })
 
 // Starting the bot let's gooooooooooo
-bot.on("ready", async() => {
+bot.on("ready", async () => {
     console.log(`\n${bot.user.username} is online and ready to rock`)
-    while (true){
-        if (currentStatus === 0){
-            bot.user.setActivity("Trello", {
+    var sleepTimer = 8000;
+    while (true) {
+        if (status === 0) {
+            bot.user.setActivity("Trello", { // Change "STATUS" to the status you want the bot to display
                 type: "WATCHING"
             });
-            await sleep(sleepAmt)
-            currentStatus++;
+            await sleep(sleepTimer);
+            status++;
         }
-        if (currentStatus === 2){
-            bot.user.setActivity("with the bugs", {
+        if (status === 1) {
+            bot.user.setActivity("with the bugs", { // Change "STATUS" to the status you want the bot to display
                 type: "PLAYING"
             });
-            await sleep(sleepAmt)
-            currentStatus++;
+            await sleep(sleepTimer);
+            status++;
         }
-        if (currentStatus === 3){
-            bot.user.setActivity("with Wumpus", {
+        if (status === 2) {
+            bot.user.setActivity("with Wumpus", { // Change "STATUS" to the status you want the bot to display
                 type: "PLAYING"
             });
-            await sleep(sleepAmt)
-            currentStatus++;
+            await sleep(sleepTimer);
+            status++;
         }
-        if (currentStatus === 4){
-            bot.user.setActivity("with Clyde", {
+        if (status === 3) {
+            bot.user.setActivity("with Clyde", { // Change "STATUS" to the status you want the bot to display
                 type: "PLAYING"
             });
-            await sleep(sleepAmt)
-            currentStatus++;
+            await sleep(sleepTimer);
+            status++;
         }
-        if (currentStatus === 5){
-            bot.user.setActivity("over the testers", {
+        if (status === 4) {
+            bot.user.setActivity("over the testers", { // Change "STATUS" to the status you want the bot to display
                 type: "WATCHING"
             });
-            await sleep(sleepAmt)
-            currentStatus++;
+            await sleep(sleepTimer);
+            status = 0;
         }
+
+
     }
-})
+});
 
 // Last stuff with the robot
 bot.on("message", async message => {
@@ -114,4 +117,3 @@ bot.on("message", async message => {
 
 // Start the bot
 bot.login(config.botToken)
-
