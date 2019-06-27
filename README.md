@@ -44,7 +44,7 @@ trello
 ```
 ## All commands
 [!help](https://gyazo.com/08dfe2a9169fed21e28f8f0439b3dbc7): simple help command gives back all the command and quick explanation  
-[!search + board + keyword (+ amount of boards max 13)](https://gyazo.com/9f40ffab4c18007720e8e988dd4308d3): It will search Trello and send back links to the relevent cards  
+[!search + board + keyword](https://gyazo.com/9f40ffab4c18007720e8e988dd4308d3): It will search Trello and send back links to the relevent cards  
 [!stats](https://gyazo.com/d18652f6a5d5492c9a68412d0e893ffa): sends back some really intresting data about the searching and bot  
 [!userinfo](https://gyazo.com/4196a653029f41f7094568845c436303): @somone or leave it to get your own userinfo (total amount of searches)  
 
