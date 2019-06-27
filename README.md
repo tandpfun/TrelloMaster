@@ -19,6 +19,8 @@
 ```sh
 create an folder
 
+git clone https://github.com/y3ll0wlife/Copper-DiscordBot.git (or https://github.com/y3ll0wlife/Copper-DiscordBot/archive/master.zip)  
+
 npm init
 npm install discord.js
 npm i request
