@@ -16,6 +16,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("search + board + keyword", "It will search Trello and send back links to the relevent cards")
         .addField("stats", "Sends back some really intresting data about the searches")
         .addField("userinfo", "@somone or leave it to get your own userinfo (total amount of searches)")
+        .addField("favorite / favoritecard", "set your favorite trello card and see it by favoritecard")
         .setFooter(`Command sent by ${message.author.tag}`, message.author.avatarURL);
 
     return message.channel.send(helpRich)
