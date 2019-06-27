@@ -47,6 +47,7 @@ trello
 [!search + board + keyword](https://gyazo.com/9f40ffab4c18007720e8e988dd4308d3): It will search Trello and send back links to the relevent cards  
 [!stats](https://gyazo.com/d18652f6a5d5492c9a68412d0e893ffa): sends back some really intresting data about the searching and bot  
 [!userinfo](https://gyazo.com/4196a653029f41f7094568845c436303): @somone or leave it to get your own userinfo (total amount of searches)  
+[favorite](https://gyazo.com/b486d43b1e2406ecb466649843ce0bd4) / [favoritecard](https://gyazo.com/0147d36ed124455eecec3d4610a1b1c2): set your favorite trello card and see it by favoritecard  
 
 ## Author
 👤 **y3ll0w**
