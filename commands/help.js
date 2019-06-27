@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
         .setColor("BLURPLE")
         .setDescription("**>Help Menu**")
         .addField("search + board + keyword", "It will search Trello and send back links to the relevent cards")
-        .addField("stats", "Sends back some really intresting data about the searching and bot.")
+        .addField("stats", "Sends back some really intresting data about the searches")
         .addField("userinfo", "@somone or leave it to get your own userinfo (total amount of searches)")
         .setFooter(`Command sent by ${message.author.tag}`, message.author.avatarURL);
 

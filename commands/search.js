@@ -30,8 +30,8 @@ module.exports.run = async (bot, message, args) => {
     let board = args[0].toLowerCase()
     let keyword = args.slice(1).join(" ")
     let amtOfCards = args.slice(2).join(" ")
-    let amtCards = "5"
-    if (amtOfCards === "") amtCards == "5"
+    let amtCards = "10"
+    if (amtOfCards === "") amtCards == "10"
     else amtCards = amtOfCards
 
     if (amtCards >= 13) return message.channel.send("Too many card's this will not work please lower the amount of cards")
