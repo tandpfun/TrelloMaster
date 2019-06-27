@@ -29,12 +29,6 @@ module.exports.run = async (bot, message, args) => {
 
     let board = args[0].toLowerCase()
     let keyword = args.slice(1).join(" ")
-    let amtOfCards = args.slice(2).join(" ")
-    let amtCards = "10"
-    if (amtOfCards === "") amtCards == "10"
-    else amtCards = amtOfCards
-
-    if (amtCards >= 13) return message.channel.send("Too many card's this will not work please lower the amount of cards")
 
     if (board == "desktop" || board == "linux" || board == "ios" || board == "android" || board == "store") {
         if (board == "desktop") boardID = desktopBugs;
@@ -57,7 +51,7 @@ module.exports.run = async (bot, message, args) => {
             modelTypes: 'cards',
             boards_limit: '1',
             card_fields: 'desc,name,shortUrl,labels,closed',
-            cards_limit: amtCards,
+            cards_limit: 10,
             cards_page: '0',
             card_list: 'false',
             card_members: 'false',
